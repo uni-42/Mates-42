@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-container input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+        .category {
+            margin-top: 20px;
+        }
+        .category h2 {
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 10px;
+        }
+        .game {
+            background-color: #1e1e1e;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Gaming Hub</h1>
+    <div class="search-container">
+        <input type="text" placeholder="Search for games..."/>
+    </div>
+    <div class="category">
+        <h2>Action Games</h2>
+        <!-- Example games, add more as needed -->
+        <div class="game">Game 1</div>
+        <div class="game">Game 2</div>
+        <!-- Add all 200+ games organized by categories -->
+    </div>
+    <div class="category">
+        <h2>Adventure Games</h2>
+        <div class="game">Game 1</div>
+        <div class="game">Game 2</div>
+    </div>
+    <!-- Repeat for other categories, e.g., Puzzle, RPG, etc. -->
+
+    <script>
+        // Placeholder for search functionality
+        document.querySelector('.search-container input').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            document.querySelectorAll('.game').forEach(game => {
+                const gameName = game.textContent.toLowerCase();
+                game.style.display = gameName.includes(query) ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
